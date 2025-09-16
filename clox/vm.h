@@ -17,6 +17,7 @@ constexpr size_t STACK_MAX = 256;
 typedef struct{
     Chunk chunk;
     int32_t ip_index;
+    int32_t const_index;
     std::array<Value, STACK_MAX> stack;
     Value *stack_top;
 }VM;

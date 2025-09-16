@@ -7,7 +7,7 @@
 
 #include "chunk.h"
 #include "memory.h"
-
+#include <iostream>
 namespace clox {
 
 void initChunk(Chunk &chunk){
@@ -34,6 +34,7 @@ void writeChunk(Chunk &chunk, uint8_t byte, int32_t line){
 int addConstant(Chunk &chunk, Value value){
 
     writeValueVec(chunk.constants, value);
+    std::cout << chunk.constants.capacity << " " << chunk.constants.count << "\n";
     return chunk.constants.count - 1;
 }
 
